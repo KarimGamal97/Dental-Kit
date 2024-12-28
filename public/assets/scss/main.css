@@ -281,6 +281,59 @@ header .header-img {
   }
 }
 
+.newsletter {
+  background-color: #a0b6ea;
+}
+.newsletter .desc h3 {
+  font-weight: bold;
+  font-size: 34px;
+}
+.newsletter .desc p {
+  font-size: 16px;
+  color: #222;
+}
+.newsletter .input-group {
+  display: flex;
+  align-items: center;
+}
+.newsletter .input {
+  min-height: 50px;
+  max-width: 350px;
+  width: 70%;
+  padding: 0 1rem;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid var(--primary);
+  border-radius: 6px 0 0 6px;
+  background-color: transparent;
+}
+.newsletter .input::-moz-placeholder {
+  color: #222;
+}
+.newsletter .input::placeholder {
+  color: #222;
+}
+.newsletter .button--submit {
+  min-height: 50px;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.newsletter .button--submit:hover {
+  background-color: var(--primary);
+  opacity: 0.92;
+}
+.newsletter .input:focus,
+.newsletter .input:focus-visible {
+  border-color: var(--primary);
+  outline: none;
+}
+
 /* Footer Styles */
 footer {
   background-color: #13286d;

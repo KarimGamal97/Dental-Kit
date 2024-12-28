@@ -285,7 +285,60 @@ header .header-img {
     }
   }
 }
+// NewsLetter Styles
+.newsletter {
+  background-color: #a0b6ea;
+  .desc h3 {
+    font-weight: bold;
+    font-size: 34px;
+  }
+  .desc p {
+    font-size: 16px;
+    color: #222;
+  }
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
 
+  .input {
+    min-height: 50px;
+    max-width: 350px;
+    width: 70%;
+    padding: 0 1rem;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid var(--primary);
+    border-radius: 6px 0 0 6px;
+    background-color: transparent;
+  }
+  .input::placeholder {
+    color: #222;
+  }
+
+  .button--submit {
+    min-height: 50px;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .button--submit:hover {
+    background-color: var(--primary);
+    opacity: 0.92;
+  }
+
+  .input:focus,
+  .input:focus-visible {
+    border-color: var(--primary);
+    outline: none;
+  }
+}
 /* Footer Styles */
 footer {
   background-color: #13286d;

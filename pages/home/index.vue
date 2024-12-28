@@ -83,6 +83,35 @@
         </div>
       </div>
     </div>
+    <div class="newsletter section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="desc col-md-6 col-xs-12">
+            <h3>Join our Newsletter</h3>
+            <p>
+              Subscribe to our newsletter to get the latest news and
+              <br class="break-word" />
+              updates directly to your inbox.
+            </p>
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <form action.prevent="POST" class="form">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="input"
+                  id="Email"
+                  name="Email"
+                  placeholder="example@email.com"
+                  autocomplete="off"
+                />
+                <input class="button--submit" value="Subscribe" type="submit" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="text-center section">
       <div class="container">
         <div class="logo">
