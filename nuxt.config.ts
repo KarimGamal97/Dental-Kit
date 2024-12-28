@@ -34,7 +34,10 @@ export default defineNuxtConfig({
       },
     },
   },
-  css: ["bootstrap/dist/css/bootstrap.min.css", "/public/assets/scss/main.css"],
-  devtools: { enabled: false },
-  plugins: ["~/plugins/axios.js", "~/plugins/bootstrap.js"],
+  // router: {
+  //   middleware: ["error"],
+  // },
+  router: {
+    middleware: ["error"],
+  },
 });
