@@ -34,7 +34,25 @@ export default defineNuxtConfig({
       },
     },
   },
-  css: ["bootstrap/dist/css/bootstrap.min.css", "/public/assets/scss/main.css"],
+  modules: ["notivue/nuxt"],
+  css: [
+    "bootstrap/dist/css/bootstrap.min.css",
+    "/public/assets/scss/main.css",
+    "notivue/notification.css",
+    "notivue/animations.css",
+    "notivue/notification-progress.css",
+  ],
   devtools: { enabled: false },
   plugins: ["~/plugins/axios.js", "~/plugins/bootstrap.js"],
+  notivue: {
+    position: "top-right",
+    limit: 4,
+    enqueue: true,
+    avoidDuplicates: true,
+    notifications: {
+      global: {
+        duration: 4000,
+      },
+    },
+  },
 });

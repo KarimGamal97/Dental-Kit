@@ -95,17 +95,47 @@
             </p>
           </div>
           <div class="col-md-6 col-xs-12">
-            <form action.prevent="POST" class="form">
+            <form action.prevent="submitForm" class="form">
               <div class="input-group">
                 <input
                   type="email"
                   class="input"
                   id="Email"
+                  v-model="email"
                   name="Email"
                   placeholder="example@email.com"
                   autocomplete="off"
+                  required
                 />
-                <input class="button--submit" value="Subscribe" type="submit" />
+                <!-- <input
+                  v-model="email"
+                  class="button--submit"
+                  @click="handleSubmit"
+                  value="Subscribe"
+                  type="submit"
+                />
+                <Notivue v-slot="item">
+                  <Notification :item="item" :theme="pastelTheme">
+                    <NotificationProgress :item="item" />
+                  </Notification>
+                </Notivue> -->
+                <input
+                  class="button--submit"
+                  @click="
+                    push.success({
+                      title: 'You are In 🎉',
+                      message:
+                        'Thanks for subscribing! Updates are coming soon!',
+                    })
+                  "
+                  value="Subscribe"
+                  type="submit"
+                />
+                <Notivue v-slot="item">
+                  <Notification :item="item" :theme="pastelTheme">
+                    <NotificationProgress :item="item" />
+                  </Notification>
+                </Notivue>
               </div>
             </form>
           </div>
@@ -150,5 +180,26 @@
   </div>
 </template>
   
-  <script>
+  <script setup>
+// import { ref } from "vue";
+// import axios from "axios";
+
+// const email = ref("");
+
+// const handleSubmit = async () => {
+//   try {
+//     const response = await axios.post("https://api.example.com/subscribe", {
+//       email: email.value,
+//     });
+//     push.success({
+//       title: "You are In 🎉",
+//       message: "Thanks for subscribing! Updates are coming soon!",
+//     });
+//   } catch (error) {
+//     push.error({
+//       title: "Subscription Failed",
+//       message: "There was an error subscribing. Please try again later.",
+//     });
+//   }
+// };
 </script>
