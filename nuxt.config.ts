@@ -33,6 +33,15 @@ export default defineNuxtConfig({
         },
       },
     },
+    server: {
+      proxy: {
+        "/api": {
+          target: "http://mindtocode-001-site11.qtempurl.com", // Your API URL
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ""),
+        },
+      },
+    },
   },
   modules: ["notivue/nuxt"],
   css: [

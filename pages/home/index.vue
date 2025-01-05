@@ -95,7 +95,7 @@
             </p>
           </div>
           <div class="col-md-6 col-xs-12">
-            <form action.prevent="submitForm" class="form">
+            <form @submit.prevent="handleSubmit" class="form">
               <div class="input-group">
                 <input
                   type="email"
@@ -107,30 +107,7 @@
                   autocomplete="off"
                   required
                 />
-                <!-- <input
-                  v-model="email"
-                  class="button--submit"
-                  @click="handleSubmit"
-                  value="Subscribe"
-                  type="submit"
-                />
-                <Notivue v-slot="item">
-                  <Notification :item="item" :theme="pastelTheme">
-                    <NotificationProgress :item="item" />
-                  </Notification>
-                </Notivue> -->
-                <input
-                  class="button--submit"
-                  @click="
-                    push.success({
-                      title: 'You are In 🎉',
-                      message:
-                        'Thanks for subscribing! Updates are coming soon!',
-                    })
-                  "
-                  value="Subscribe"
-                  type="submit"
-                />
+                <input class="button--submit" type="submit" value="Subscribe" />
                 <Notivue v-slot="item">
                   <Notification :item="item" :theme="pastelTheme">
                     <NotificationProgress :item="item" />
@@ -181,25 +158,38 @@
 </template>
   
   <script setup>
-// import { ref } from "vue";
-// import axios from "axios";
+import { ref } from "vue";
+import axios from "axios";
 
-// const email = ref("");
+const email = ref("");
 
-// const handleSubmit = async () => {
-//   try {
-//     const response = await axios.post("https://api.example.com/subscribe", {
-//       email: email.value,
-//     });
-//     push.success({
-//       title: "You are In 🎉",
-//       message: "Thanks for subscribing! Updates are coming soon!",
-//     });
-//   } catch (error) {
-//     push.error({
-//       title: "Subscription Failed",
-//       message: "There was an error subscribing. Please try again later.",
-//     });
-//   }
-// };
+const handleSubmit = async () => {
+  try {
+    const response = await axios.post(
+      "http://mindtocode-001-site11.qtempurl.com/api/ContactUs/Send",
+      {
+        email: email.value,
+      }
+      // {
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     "Access-Control-Allow-Origin": "*",
+      //   },
+      // }
+    );
+    email.value = "";
+    // Success notification
+    push.success({
+      title: "You are In 🎉",
+      message: "Thanks for subscribing! Updates are coming soon!",
+    });
+  } catch (error) {
+    console.error(error.name);
+    // Error notification
+    push.error({
+      title: "Subscription Failed",
+      message: "There was an error subscribing. Please try again later.",
+    });
+  }
+};
 </script>
